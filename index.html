@@ -1,330 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oakmont Building Services | Property Maintenance & Concrete Works Sydney</title>
-  <meta name="description" content="Direct property maintenance, strata maintenance, concrete works, formwork, footpaths and driveways across Sydney. No unnecessary middleman." />
-  <style>
-    :root{
-      --black:#070707;
-      --charcoal:#101113;
-      --dark:#161719;
-      --gold:#c9953d;
-      --gold2:#e3bb68;
-      --white:#ffffff;
-      --muted:#676767;
-      --light:#f6f4f0;
-      --line:#e4ded2;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Arial, Helvetica, sans-serif;color:var(--black);background:#fff;line-height:1.5}
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(1180px,92%);margin:0 auto}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oakmont Building Services</title>
+<script src="https://cdn.tailwindcss.com"></script>
 
-    /* Header */
-    header{position:sticky;top:0;z-index:1000;background:rgba(7,7,7,.96);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:14px 0;color:#fff}
-    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}
-    .logo-mark{width:52px;height:52px;position:relative;border-bottom:3px solid var(--gold)}
-    .logo-mark span{position:absolute;bottom:4px;width:9px;border:3px solid var(--gold);border-bottom:0}
-    .logo-mark span:nth-child(1){left:7px;height:24px;border-color:#fff}
-    .logo-mark span:nth-child(2){left:20px;height:40px;border-color:var(--gold)}
-    .logo-mark span:nth-child(3){left:33px;height:30px;border-color:#fff}
-    .brand-text strong{display:block;letter-spacing:3px;font-size:18px;line-height:1}
-    .brand-text small{color:var(--gold2);font-weight:700;font-size:11px;letter-spacing:1.5px}
-    nav ul{display:flex;gap:24px;list-style:none;align-items:center}
-    nav a{font-size:13px;font-weight:800;letter-spacing:.5px;color:#fff;opacity:.9}
-    nav a:hover{color:var(--gold2);opacity:1}
-    .header-actions{display:flex;align-items:center;gap:14px;color:#fff}
-    .phone{font-weight:900;font-size:18px;white-space:nowrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;cursor:pointer;font-weight:900;text-transform:uppercase;letter-spacing:.4px;border-radius:2px;transition:.2s ease}
-    .btn-gold{background:var(--gold);color:#fff;padding:14px 22px}
-    .btn-gold:hover{background:#b68435;transform:translateY(-1px)}
-    .btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:12px 20px;background:transparent}
-    .btn-outline:hover{background:#fff;color:#111}
-
-    /* Hero */
-    .hero{position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(0,0,0,.93),rgba(0,0,0,.70)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1800&q=80') center/cover;color:#fff}
-    .hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;padding:86px 0 92px}
-    .eyebrow{display:inline-block;color:var(--gold2);font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:13px;margin-bottom:18px}
-    h1{font-size:clamp(42px,6vw,72px);line-height:.98;font-weight:950;text-transform:uppercase;letter-spacing:-1px;max-width:790px}
-    .gold-text{color:var(--gold2)}
-    .hero p{font-size:20px;color:#efefef;max-width:620px;margin:22px 0 30px}
-    .hero-buttons{display:flex;flex-wrap:wrap;gap:18px}
-    .hero-card{background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.12);padding:28px;box-shadow:0 25px 55px rgba(0,0,0,.4)}
-    .hero-feature{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12)}
-    .hero-feature:last-child{border-bottom:0}
-    .icon{width:44px;height:44px;border:2px solid var(--gold);color:var(--gold2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px}
-    .hero-feature h3{font-size:16px;text-transform:uppercase;margin-bottom:3px}
-    .hero-feature p{font-size:14px;margin:0;color:#ddd}
-
-    /* Trust strip */
-    .trust-strip{transform:translateY(-34px);position:relative;z-index:3}
-    .trust-box{background:#fff;box-shadow:0 18px 45px rgba(0,0,0,.16);display:grid;grid-template-columns:repeat(4,1fr);border-radius:4px;overflow:hidden}
-    .trust-item{padding:24px 24px;display:flex;align-items:center;gap:12px;border-right:1px solid var(--line);font-weight:900;text-transform:uppercase;font-size:14px}
-    .trust-item:last-child{border-right:0}
-    .check{color:var(--gold);font-size:22px}
-
-    section{padding:76px 0}
-    .section-title{max-width:760px;margin-bottom:38px}
-    .section-title.center{text-align:center;margin-left:auto;margin-right:auto}
-    .kicker{color:var(--gold);font-weight:950;text-transform:uppercase;letter-spacing:1.8px;font-size:14px;margin-bottom:8px}
-    h2{font-size:clamp(32px,4vw,48px);line-height:1.08;text-transform:uppercase;letter-spacing:-.5px}
-    .section-title p{color:var(--muted);font-size:18px;margin-top:14px}
-
-    /* Who/services */
-    .split-services{display:grid;grid-template-columns:260px 1fr;align-items:stretch;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.08)}
-    .who{background:var(--black);color:#fff;padding:36px 28px}
-    .who h3{color:var(--gold2);text-transform:uppercase;margin-bottom:26px;letter-spacing:1px}
-    .who ul{list-style:none;display:grid;gap:20px}
-    .who li{font-weight:800;display:flex;gap:12px;align-items:center}
-    .service-grid{display:grid;grid-template-columns:repeat(6,1fr);padding:38px 22px;background:#fff}
-    .service-card{text-align:center;padding:0 18px;border-right:1px solid var(--line)}
-    .service-card:last-child{border-right:0}
-    .service-icon{font-size:34px;color:var(--gold);margin-bottom:13px}
-    .service-card h3{font-size:13px;text-transform:uppercase;line-height:1.2;margin-bottom:9px}
-    .service-card p{font-size:12px;color:#555}
-
-    /* Recent work + call */
-    .work-call{display:grid;grid-template-columns:1.45fr .8fr;background:var(--black);color:#fff;padding:0}
-    .work{padding:54px 0 54px 6%;}
-    .work .kicker{font-size:26px;color:#fff;margin-bottom:24px;position:relative;display:inline-block}
-    .work .kicker:after{content:"";display:block;width:60px;height:3px;background:var(--gold);margin-top:8px}
-    .work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-right:34px}
-    .work-card img{width:100%;height:130px;object-fit:cover}
-    .work-card h4{text-transform:uppercase;font-size:13px;text-align:center;margin-top:10px}
-    .work-card p{text-align:center;color:var(--gold2);font-size:12px;font-weight:700}
-    .call-panel{background:var(--gold);color:#111;display:flex;align-items:center;justify-content:center;text-align:center;padding:44px 28px}
-    .call-panel h2{font-size:34px;margin:8px 0 18px}
-    .call-number{display:block;background:#050505;color:#fff;font-size:36px;font-weight:950;padding:12px 24px;margin:16px auto;max-width:360px}
-    .call-panel p{font-weight:950;text-transform:uppercase;max-width:360px;margin:0 auto 22px}
-
-    /* Quote */
-    .quote{background:#fff}
-    .quote-wrap{display:grid;grid-template-columns:.9fr 1.35fr;gap:34px;align-items:start}
-    .quote-info{padding:10px 0}
-    .quote-info h2{font-size:32px}
-    .quote-steps{margin-top:28px;display:grid;gap:22px}
-    .quote-step{display:grid;grid-template-columns:48px 1fr;gap:16px;border-bottom:1px solid var(--line);padding-bottom:18px}
-    .quote-step h3{font-size:16px;text-transform:uppercase}
-    .quote-step p{font-size:14px;color:#666}
-    .form-box{background:#fafafa;border:1px solid var(--line);padding:28px;box-shadow:0 18px 50px rgba(0,0,0,.06)}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    label{font-size:13px;font-weight:800;margin-bottom:6px;display:block;color:#333}
-    input,select,textarea{width:100%;padding:14px;border:1px solid #d8d8d8;background:#fff;font:inherit;border-radius:0;outline:none}
-    input:focus,select:focus,textarea:focus{border-color:var(--gold)}
-    textarea{min-height:126px;resize:vertical}
-    .full{grid-column:1/-1}
-    .upload{border:2px dashed var(--gold);background:#fff;padding:24px;text-align:center;color:#333}
-    .upload input{border:0;padding:10px 0;background:transparent}
-    .estimate-card{grid-column:1/-1;background:#111;color:#fff;padding:22px;display:flex;justify-content:space-between;gap:20px;align-items:center}
-    .estimate-card strong{font-size:34px;color:var(--gold2)}
-    .note{font-size:13px;color:#666;margin:14px 0}
-    .submit{width:100%;padding:16px;font-size:15px}
-
-    /* Why */
-    .why{background:var(--light)}
-    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .why-card{background:#fff;padding:28px;border:1px solid var(--line);min-height:180px}
-    .why-card .icon{border-radius:0;margin-bottom:18px}
-    .why-card h3{text-transform:uppercase;font-size:17px;margin-bottom:8px}
-    .why-card p{color:#666;font-size:14px}
-
-    /* Footer */
-    footer{background:var(--black);color:#fff;padding:46px 0 22px}
-    .footer-top{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:34px;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:34px}
-    footer h3{color:var(--gold2);text-transform:uppercase;font-size:14px;margin-bottom:14px}
-    footer p,footer li,footer a{color:#d7d7d7;font-size:14px}
-    footer ul{list-style:none;display:grid;gap:8px}
-    .copyright{text-align:center;color:#aaa;font-size:13px;margin-top:22px}
-
-    @media(max-width:1050px){
-      nav ul{display:none}.hero-inner{grid-template-columns:1fr}.trust-box{grid-template-columns:repeat(2,1fr)}.split-services{grid-template-columns:1fr}.service-grid{grid-template-columns:repeat(3,1fr);gap:24px}.service-card{border-right:0}.work-call{grid-template-columns:1fr}.quote-wrap{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}.why-grid{grid-template-columns:1fr 1fr}
-    }
-    @media(max-width:700px){
-      .header-actions .phone{display:none}.brand-text strong{font-size:14px}.brand-text small{font-size:9px}.btn-gold{padding:12px 14px;font-size:12px}.hero-inner{padding:56px 0}.trust-box,.service-grid,.work-grid,.why-grid,.footer-top{grid-template-columns:1fr}.trust-item{border-right:0;border-bottom:1px solid var(--line)}.work{padding:44px 6%}.form-grid{grid-template-columns:1fr}.estimate-card{display:block}.call-number{font-size:26px}section{padding:54px 0}
-    }
-  </style>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .orange { color: #ff6a00; }
+  .bg-orange-main { background-color: #ff6a00; }
+  .border-orange-main { border-color: #ff6a00; }
+</style>
 </head>
-<body>
-  <header>
-    <div class="container nav">
-      <a href="#home" class="brand" aria-label="Oakmont Building Services home">
-        <div class="logo-mark"><span></span><span></span><span></span></div>
-        <div class="brand-text"><strong>OAKMONT</strong><small>BUILDING SERVICES</small></div>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#services">SERVICES</a></li>
-          <li><a href="#work">OUR WORK</a></li>
-          <li><a href="#quote">QUOTE</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <a class="phone" href="tel:0466802855">☎ 0466 802 855</a>
-        <a class="btn btn-gold" href="#quote">Get a Fast Quote</a>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="container hero-inner">
-        <div>
-          <span class="eyebrow">Sydney property maintenance</span>
-          <h1>Direct property maintenance & concrete works <span class="gold-text">Sydney — no middleman</span></h1>
-          <p>Faster, more cost-effective maintenance, repairs, concrete works and formwork for strata, residential and commercial properties.</p>
-          <div class="hero-buttons">
-            <a class="btn btn-gold" href="#quote">Get a Fast Quote</a>
-            <a class="btn btn-outline" href="tel:0466802855">Call 0466 802 855</a>
-          </div>
-        </div>
-        <div class="hero-card">
-          <div class="hero-feature"><div class="icon">⏱</div><div><h3>Fast & Reliable</h3><p>Most quotes returned within 24 hours.</p></div></div>
-          <div class="hero-feature"><div class="icon">✓</div><div><h3>No Middleman</h3><p>Direct labour and trades equals better value.</p></div></div>
-          <div class="hero-feature"><div class="icon">⚒</div><div><h3>Experienced Team</h3><p>Strata, residential construction and civil experience.</p></div></div>
-          <div class="hero-feature"><div class="icon">★</div><div><h3>Quality Guaranteed</h3><p>Built to last. Done properly.</p></div></div>
-        </div>
-      </div>
-    </section>
+<body class="bg-[#0b0b0b] text-white">
 
-    <div class="container trust-strip">
-      <div class="trust-box">
-        <div class="trust-item"><span class="check">✓</span> Servicing Sydney NSW</div>
-        <div class="trust-item"><span class="check">✓</span> Strata & construction experienced</div>
-        <div class="trust-item"><span class="check">✓</span> Direct labour + trades</div>
-        <div class="trust-item"><span class="check">✓</span> Fast turnaround</div>
-      </div>
-    </div>
+<!-- NAVBAR -->
+<header class="sticky top-0 z-50 bg-[#0b0b0b]/95 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-    <section id="services" style="padding-top:34px">
-      <div class="container split-services">
-        <aside class="who">
-          <h3>Who we work with</h3>
-          <ul>
-            <li>🏢 Strata Managers</li>
-            <li>🏗 Builders</li>
-            <li>💼 Property Managers</li>
-            <li>🏠 Homeowners</li>
-          </ul>
-        </aside>
-        <div class="service-grid">
-          <div class="service-card"><div class="service-icon">🏠</div><h3>Property Maintenance</h3><p>General repairs, maintenance and preventative works.</p></div>
-          <div class="service-card"><div class="service-icon">▰</div><h3>Concrete Works</h3><p>Driveways, slabs, paths, ramps and more.</p></div>
-          <div class="service-card"><div class="service-icon">▥</div><h3>Formwork & Structures</h3><p>Quality formwork for concrete structures.</p></div>
-          <div class="service-card"><div class="service-icon">🔨</div><h3>Repairs & Refurbishments</h3><p>Restorations, patching, water damage and repairs.</p></div>
-          <div class="service-card"><div class="service-icon">🏢</div><h3>Strata Maintenance</h3><p>Common area repairs, concrete, drainage and more.</p></div>
-          <div class="service-card"><div class="service-icon">🏬</div><h3>Commercial Services</h3><p>Maintenance and concrete solutions for commercial sites.</p></div>
-        </div>
+    <!-- TREE LOGO -->
+    <a href="#" class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-full bg-orange-main flex items-center justify-center">
+        <svg width="34" height="34" viewBox="0 0 64 64" fill="none">
+          <path d="M32 47V26" stroke="black" stroke-width="5" stroke-linecap="round"/>
+          <path d="M32 28C22 22 16 24 10 30C15 14 28 10 32 21C36 10 49 14 54 30C48 24 42 22 32 28Z" fill="black"/>
+          <path d="M18 51C26 46 38 46 46 51" stroke="black" stroke-width="4" stroke-linecap="round"/>
+        </svg>
       </div>
-    </section>
 
-    <section id="work" class="work-call">
-      <div class="work">
-        <h2 class="kicker">Recent Work</h2>
-        <div class="work-grid">
-          <div class="work-card"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Driveway concrete work"><h4>Driveway Pour</h4><p>Eastern Suburbs</p></div>
-          <div class="work-card"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=80" alt="Strata stair repairs"><h4>Strata Repairs</h4><p>Inner West</p></div>
-          <div class="work-card"><img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=600&q=80" alt="Footpath concrete and formwork"><h4>Footpath & Formwork</h4><p>Sydney CBD</p></div>
-          <div class="work-card"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Commercial concrete ramp"><h4>Concrete Ramp</h4><p>Western Sydney</p></div>
-        </div>
-      </div>
-      <div class="call-panel">
-        <div>
-          <div style="font-size:44px">⏱</div>
-          <h2>Need it done quickly?</h2>
-          <span class="call-number">☎ 0466 802 855</span>
-          <p>Same-day response available for urgent works</p>
-          <a class="btn" style="background:#fff;color:#111;padding:13px 28px" href="tel:0466802855">Call Now</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="quote" class="quote">
-      <div class="container quote-wrap">
-        <div class="quote-info">
-          <p class="kicker">Fast quote request</p>
-          <h2>Get a fast, accurate quote</h2>
-          <p style="color:#666;margin-top:14px">Upload photos and job details so we can better assess the scope and reply with tailored pricing.</p>
-          <div class="quote-steps">
-            <div class="quote-step"><div class="icon">☁</div><div><h3>Upload photos</h3><p>Add clear photos so we can review your job more accurately.</p></div></div>
-            <div class="quote-step"><div class="icon">☷</div><div><h3>Job details</h3><p>Tell us what needs to be done, where it is and how urgent it is.</p></div></div>
-            <div class="quote-step"><div class="icon">$</div><div><h3>Fast quote</h3><p>Most quotes returned within 24 hours after review.</p></div></div>
-          </div>
-        </div>
-
-        <form class="form-box" action="https://formsubmit.co/suney.m@oakmontbuildingservices.com" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="_subject" value="New Oakmont Website Quote Request">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <div class="form-grid">
-            <div><label>Your Name *</label><input name="name" required placeholder="Your name"></div>
-            <div><label>Phone Number *</label><input name="phone" required placeholder="Phone number"></div>
-            <div><label>Email</label><input type="email" name="email" placeholder="Email address"></div>
-            <div><label>Property / Site Address</label><input name="address" placeholder="Suburb or address"></div>
-            <div><label>Property Type</label><select name="property_type" id="propertyType"><option>Strata</option><option>Residential</option><option>Commercial</option></select></div>
-            <div><label>Job Type</label><select name="job_type" id="jobType"><option value="110">Property Maintenance</option><option value="125">Concrete Works</option><option value="125">Formwork & Structures</option><option value="130">Repairs & Make-Safes</option><option value="120">Strata Maintenance</option><option value="125">Direct Labour & Trades</option></select></div>
-            <div><label>Urgency</label><select name="urgency" id="urgency"><option value="1">Standard</option><option value="1.15">Priority</option><option value="1.3">Urgent</option></select></div>
-            <div><label>Estimated Hours</label><input type="number" min="1" value="4" name="estimated_hours" id="hours"></div>
-            <div class="full"><label>Tell us about your project *</label><textarea name="message" required placeholder="Describe the works, access, timing, materials required, or any issues onsite..."></textarea></div>
-            <div class="full upload"><strong>Drag & drop files here or click to browse</strong><br><small>Upload photos or documents. JPG, PNG, PDF. Max total attachments 10MB.</small><input type="file" name="attachment" multiple accept="image/*,.pdf"></div>
-            <div class="estimate-card"><div><strong id="estimate">$440</strong><p>Indicative guide only. Final quote confirmed after review.</p></div><a class="btn btn-gold" href="#quote" onclick="document.querySelector('.form-box').scrollIntoView({behavior:'smooth'});return false;">Review & Submit</a></div>
-          </div>
-          <p class="note">🔒 We review every enquiry manually and provide a tailored quote based on your job, access, photos and site conditions.</p>
-          <button class="btn btn-gold submit" type="submit">Submit Enquiry</button>
-        </form>
-      </div>
-    </section>
-
-    <section class="why">
-      <div class="container">
-        <div class="section-title center">
-          <p class="kicker">Why clients choose Oakmont</p>
-          <h2>Reliable, direct and built on trust</h2>
-        </div>
-        <div class="why-grid">
-          <div class="why-card"><div class="icon">✓</div><h3>Reliable</h3><p>Dependable service, clear communication and no unnecessary back-and-forth.</p></div>
-          <div class="why-card"><div class="icon">⏱</div><h3>Fast Response</h3><p>Quick turnaround when strata, builders or property managers need support.</p></div>
-          <div class="why-card"><div class="icon">⚒</div><h3>Experienced</h3><p>Residential construction, civil works and reliable labour hire background.</p></div>
-          <div class="why-card"><div class="icon">🤝</div><h3>Built on Trust</h3><p>Extensive working relationships with Waverley Council and City of Sydney.</p></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer id="contact">
-    <div class="container footer-top">
       <div>
-        <a href="#home" class="brand" style="margin-bottom:18px"><div class="logo-mark"><span></span><span></span><span></span></div><div class="brand-text"><strong>OAKMONT</strong><small>BUILDING SERVICES</small></div></a>
-        <p>Direct property maintenance and concrete works across Sydney. No middleman, just quality workmanship and reliable service.</p>
+        <p class="text-xl font-black tracking-widest leading-none">OAKMONT</p>
+        <p class="text-xs tracking-[0.25em] orange">BUILDING SERVICES</p>
       </div>
-      <div><h3>Quick Links</h3><ul><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#work">Our Work</a></li><li><a href="#quote">Get a Quote</a></li></ul></div>
-      <div><h3>Services</h3><ul><li>Property Maintenance</li><li>Concrete Works</li><li>Formwork & Structures</li><li>Strata Maintenance</li></ul></div>
-      <div><h3>Contact Us</h3><ul><li><a href="tel:0466802855">0466 802 855</a></li><li><a href="mailto:suney.m@oakmontbuildingservices.com">suney.m@oakmontbuildingservices.com</a></li><li>Sydney, NSW</li></ul></div>
-    </div>
-    <div class="copyright">© 2026 Oakmont Building Services. All Rights Reserved.</div>
-  </footer>
+    </a>
 
-  <script>
-    const propertyType = document.getElementById('propertyType');
-    const jobType = document.getElementById('jobType');
-    const urgency = document.getElementById('urgency');
-    const hours = document.getElementById('hours');
-    const estimate = document.getElementById('estimate');
-    function updateEstimate(){
-      const propMap = { Strata: 1.1, Residential: 1, Commercial: 1.2 };
-      const baseRate = Number(jobType.value || 110);
-      const h = Math.max(1, Number(hours.value || 1));
-      const total = Math.round(baseRate * h * Number(urgency.value || 1) * (propMap[propertyType.value] || 1));
-      estimate.textContent = '$' + total.toLocaleString();
-    }
-    [propertyType, jobType, urgency, hours].forEach(el => el.addEventListener('input', updateEstimate));
-    updateEstimate();
-  </script>
+    <nav class="hidden md:flex gap-6 text-sm text-gray-300">
+      <a href="#" class="hover:text-[#ff6a00]">Home</a>
+      <a href="#services" class="hover:text-[#ff6a00]">Services</a>
+      <a href="#landscaping" class="hover:text-[#ff6a00]">Landscaping</a>
+      <a href="#why" class="hover:text-[#ff6a00]">Why Us</a>
+      <a href="#quote" class="hover:text-[#ff6a00]">Quote</a>
+      <a href="#contact" class="hover:text-[#ff6a00]">Contact</a>
+    </nav>
+
+    <a href="#quote" class="bg-orange-main text-black px-5 py-3 rounded-lg font-bold text-sm">
+      Get Quote
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="px-6 py-20 bg-gradient-to-br from-black via-[#111] to-[#1f1f1f]">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+    <div>
+      <p class="orange font-bold mb-3 tracking-wide">
+        Sydney Property Maintenance • Landscaping • Concrete
+      </p>
+
+      <h1 class="text-4xl md:text-6xl font-black leading-tight">
+        Premium Landscaping & Property Works Built on Trust.
+      </h1>
+
+      <p class="mt-6 text-gray-300 text-lg">
+        Oakmont Building Services delivers patio landscaping, garden upgrades, concrete works,
+        formwork and strata maintenance across Sydney — direct, reliable and without unnecessary middleman costs.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#quote" class="bg-orange-main text-black px-7 py-4 rounded-lg font-bold">
+          Upload Job & Get Pricing
+        </a>
+        <a href="tel:0466802855" class="border border-white/30 px-7 py-4 rounded-lg font-bold">
+          Call 0466 802 855
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-white text-black rounded-2xl p-8 shadow-xl">
+      <h3 class="text-2xl font-black mb-5">Why Clients Choose Oakmont</h3>
+      <ul class="space-y-4 text-sm">
+        <li>✔ Direct labour and trusted trades</li>
+        <li>✔ Patio, garden and outdoor upgrades</li>
+        <li>✔ Concrete, formwork and property works</li>
+        <li>✔ Strata and residential experience</li>
+        <li>✔ Most quotes returned within 24 hours</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="bg-white text-black px-6 py-5">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-4 text-center text-sm font-bold">
+    <div>Servicing Sydney NSW</div>
+    <div>Strata & Residential</div>
+    <div>Direct Labour + Trades</div>
+    <div>Fast Quote Turnaround</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="px-6 py-20 max-w-7xl mx-auto">
+  <h2 class="text-4xl font-black mb-4">Our Main Services</h2>
+  <p class="text-gray-400 mb-10 max-w-2xl">
+    Practical, high-quality property works delivered by a reliable team with construction and labour coordination experience.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-6">
+
+    <div class="bg-[#151515] border border-orange-main p-7 rounded-2xl">
+      <h3 class="text-xl font-black orange mb-3">Patio & Garden Landscaping</h3>
+      <p class="text-gray-400">
+        Premium patios, garden makeovers, turf, edging, planting, paving and outdoor transformations.
+      </p>
+    </div>
+
+    <div class="bg-[#151515] border border-white/10 p-7 rounded-2xl">
+      <h3 class="text-xl font-black mb-3">Concrete Works</h3>
+      <p class="text-gray-400">
+        Driveways, slabs, footpaths, concrete paths, ramps and external concrete works.
+      </p>
+    </div>
+
+    <div class="bg-[#151515] border border-white/10 p-7 rounded-2xl">
+      <h3 class="text-xl font-black mb-3">Formwork</h3>
+      <p class="text-gray-400">
+        Formwork for concrete structures, slabs, paths, retaining edges and external works.
+      </p>
+    </div>
+
+    <div class="bg-[#151515] border border-white/10 p-7 rounded-2xl">
+      <h3 class="text-xl font-black mb-3">Property Maintenance</h3>
+      <p class="text-gray-400">
+        General repairs, make-safes, preventative maintenance and ongoing property support.
+      </p>
+    </div>
+
+    <div class="bg-[#151515] border border-white/10 p-7 rounded-2xl">
+      <h3 class="text-xl font-black mb-3">Strata Maintenance</h3>
+      <p class="text-gray-400">
+        Common area repairs, garden upgrades, external upkeep, drainage, paths and concrete works.
+      </p>
+    </div>
+
+    <div class="bg-[#151515] border border-white/10 p-7 rounded-2xl">
+      <h3 class="text-xl font-black mb-3">Commercial Services</h3>
+      <p class="text-gray-400">
+        Maintenance, concrete and outdoor works for commercial properties and managers.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PREMIUM LANDSCAPING -->
+<section id="landscaping" class="bg-[#f7f7f7] text-black px-6 py-20">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+    <div>
+      <p class="orange font-bold mb-3">Premium Outdoor Upgrades</p>
+      <h2 class="text-4xl md:text-5xl font-black leading-tight">
+        Patio & Garden Landscaping That Lifts Property Value.
+      </h2>
+
+      <p class="mt-6 text-gray-700">
+        Designed for clients who want more than a basic tidy-up. We deliver outdoor spaces that look better,
+        function better and add long-term value to the property.
+      </p>
+
+      <div class="mt-8 grid sm:grid-cols-2 gap-4 text-sm">
+        <div class="bg-white p-4 rounded-lg shadow">✔ Patios & entertaining areas</div>
+        <div class="bg-white p-4 rounded-lg shadow">✔ Garden transformations</div>
+        <div class="bg-white p-4 rounded-lg shadow">✔ Turf, edging & planting</div>
+        <div class="bg-white p-4 rounded-lg shadow">✔ Concrete paths & paving</div>
+        <div class="bg-white p-4 rounded-lg shadow">✔ Strata outdoor upgrades</div>
+        <div class="bg-white p-4 rounded-lg shadow">✔ $10k+ project support</div>
+      </div>
+    </div>
+
+    <div class="bg-black text-white p-8 rounded-2xl">
+      <h3 class="text-3xl font-black orange">Built for Bigger Outdoor Jobs</h3>
+      <p class="mt-4 text-gray-300">
+        Ideal for full backyard upgrades, strata garden improvements, patio builds,
+        front yard presentation works and multi-scope landscaping/concrete packages.
+      </p>
+
+      <a href="#quote" class="mt-8 inline-block bg-orange-main text-black px-7 py-4 rounded-lg font-bold">
+        Request Landscaping Quote
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" class="px-6 py-20 max-w-7xl mx-auto">
+  <h2 class="text-4xl font-black mb-10">Why Oakmont Feels Safer to Hire</h2>
+
+  <div class="grid md:grid-cols-3 gap-6">
+
+    <div class="bg-[#151515] p-7 rounded-2xl border border-white/10">
+      <h3 class="font-black orange mb-3">Direct Delivery</h3>
+      <p class="text-gray-400">No inflated middleman layers. We coordinate labour and trades directly.</p>
+    </div>
+
+    <div class="bg-[#151515] p-7 rounded-2xl border border-white/10">
+      <h3 class="font-black orange mb-3">Construction Experience</h3>
+      <p class="text-gray-400">Real residential, civil and site-based experience behind the work.</p>
+    </div>
+
+    <div class="bg-[#151515] p-7 rounded-2xl border border-white/10">
+      <h3 class="font-black orange mb-3">Trust & Relationships</h3>
+      <p class="text-gray-400">Strong working relationships with Waverley Council and City of Sydney.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section id="quote" class="bg-white text-black px-6 py-20">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-4xl font-black mb-3">Get a Fast, Accurate Quote</h2>
+    <p class="text-gray-600 mb-8">
+      Upload photos and job details so we can review the scope properly and reply with tailored pricing.
+    </p>
+
+    <form action="https://formsubmit.co/suney.m@oakmontbuildingservices.com" method="POST" enctype="multipart/form-data" class="grid gap-4">
+
+      <input type="hidden" name="_subject" value="New Quote Request - Oakmont Building Services">
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="text" name="name" placeholder="Your Name" required class="p-4 rounded-lg border">
+      <input type="tel" name="phone" placeholder="Phone Number" required class="p-4 rounded-lg border">
+      <input type="email" name="email" placeholder="Email Address" class="p-4 rounded-lg border">
+      <input type="text" name="address" placeholder="Job Address" class="p-4 rounded-lg border">
+
+      <select name="service" class="p-4 rounded-lg border">
+        <option>Patio & Garden Landscaping</option>
+        <option>Concrete Works</option>
+        <option>Formwork</option>
+        <option>Property Maintenance</option>
+        <option>Strata Maintenance</option>
+        <option>Commercial Services</option>
+      </select>
+
+      <select name="budget_range" class="p-4 rounded-lg border">
+        <option>Estimated Budget</option>
+        <option>$1,000 - $5,000</option>
+        <option>$5,000 - $10,000</option>
+        <option>$10,000 - $20,000</option>
+        <option>$20,000+</option>
+      </select>
+
+      <textarea name="message" placeholder="Tell us about your job..." rows="5" class="p-4 rounded-lg border"></textarea>
+
+      <input type="file" name="attachment" multiple class="p-4 rounded-lg border bg-gray-100">
+
+      <button type="submit" class="bg-orange-main text-black py-4 rounded-lg font-black">
+        Submit Enquiry
+      </button>
+
+    </form>
+
+    <p class="text-sm mt-4 text-gray-500">
+      Most quotes returned within 24 hours. Larger landscaping and concrete projects may require a site inspection.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-orange-main text-black text-center py-14 px-6">
+  <h2 class="text-3xl font-black">Need the job reviewed quickly?</h2>
+  <p class="mt-2 text-lg">Call Oakmont directly.</p>
+  <a href="tel:0466802855" class="mt-5 inline-block bg-black text-white px-8 py-4 rounded-lg font-black">
+    0466 802 855
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact" class="bg-[#0b0b0b] border-t border-white/10 text-center py-10 px-6">
+  <p class="text-2xl font-black tracking-widest">OAKMONT</p>
+  <p class="orange tracking-[0.25em] text-sm">BUILDING SERVICES</p>
+  <p class="mt-4">0466 802 855 • suney.m@oakmontbuildingservices.com</p>
+  <p>Sydney NSW</p>
+  <p class="mt-4 text-gray-500">
+    Patio & Garden Landscaping • Property Maintenance • Concrete • Formwork • Strata
+  </p>
+</footer>
+
 </body>
 </html>
